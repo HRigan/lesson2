@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+apply plugin: 'application'
+mainClassName = 'Application'
+run{
+    standardInput= System.in
+}
+group 'javacourse'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "org.apache.commons:commons-csv:1.5"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    compile 'mysql:mysql-connector-java:8.0.17'
+    implementation 'org.hibernate:hibernate-core:5.4.3.Final'
+
+}
